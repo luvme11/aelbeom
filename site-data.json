@@ -26,7 +26,8 @@
   "popups": {
     "closeText": "닫기",
     "p01": {
-      "mark": "sf",
+      "mark": "7",
+      "moon": "on",
       "sections": [
         {
           "label": "profile",
