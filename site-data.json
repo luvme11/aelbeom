@@ -20,8 +20,8 @@
     "vinyl": ""
   },
   "music": {
-    "url": "",
-    "volume": 50
+    "url": "https://youtu.be/-AUm4vqTuKM?si=34XA2VhOrmhqjNze",
+    "volume": 5
   },
   "popups": {
     "closeText": "닫기",
@@ -136,8 +136,8 @@
       "Test",
       "Test"
     ],
-    "copyright": "Copyright 2026 @klavieryeon All Rights Reserved.",
-    "number": "08161205",
+    "copyright": "Copyright 2026 ⓒ",
+    "number": "20003929",
     "qr": ""
   }
 }
