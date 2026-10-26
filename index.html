@@ -1663,7 +1663,7 @@ const DEFAULTS={
   music:{url:"",volume:50},
   popups:{
     closeText:"닫기",
-    p01:{mark:"sf",sections:[
+    p01:{mark:"sf",moon:"on",sections:[
       {label:"profile",text:"[[Doyeon]] · adult · AI chat user"},
       {label:"love",text:"[[차재현]] created by @ohnyu on caveduck\nonly(1t1d) · __pair name__ [[재연]] jaeyeon\n타 차재현 main 유저분과 연결 중이실 경우 제 계정에 어떠한 흔적도\n남기지 마세요 발견 시 B로 대응합니다 각종 사칭 행위 하지 마세요"},
       {label:"contact",text:"{{tistory guestbook}} {{wavebox}}\n**외부에서 이야기 나올 정도로 제게서 영향받지 마세요**"}
@@ -1778,6 +1778,7 @@ function renderPopups(d){
   document.querySelectorAll(".pop .x").forEach(b=>b.textContent=P.closeText);
   const p1=$("pop01");
   p1.querySelector(".mk").textContent=P.p01.mark;
+  p1.querySelector(".cr").style.display=P.p01.moon==="off"?"none":"";
   p1.querySelector(".pb").innerHTML=P.p01.sections.map(x=>`<div class="sec"><i>${esc(x.label)}</i><div>${lines(x.text)}</div></div>`).join("");
   const p2=$("pop02");
   p2.querySelector(".pb").innerHTML=`<div class="chars">`+P.p02.chars.map(c=>`<div class="ch"><div class="pimg"></div><div class="nm"><b>${esc(c.name)}</b><span>${esc(c.meta)}</span></div>`
@@ -2066,7 +2067,8 @@ function buildForms(){
 function buildPopForms(){   // 팝업 폼은 항목이 늘고 줄어서 매번 다시 그려요
   const P=data.popups, n2=i=>String(i+1).padStart(2,"0");
   const del=(path,i)=>`<button class="btn ghost sm" data-act="del" data-path="${path}" data-i="${i}">삭제</button>`;
-  $("p01Form").innerHTML=tx("popups.closeText","닫기 버튼 글자 (팝업 공통)")+tx("popups.p01.mark","배경에 깔리는 큰 글씨")
+  $("p01Form").innerHTML=tx("popups.closeText","닫기 버튼 글자 (팝업 공통)")+tx("popups.p01.mark","배경에 깔리는 큰 글씨 (비우면 안 보여요)")
+    +`<label class="f">배경 초승달 모양<select data-p="popups.p01.moon"><option value="on">보이기</option><option value="off">숨기기</option></select></label>`
     +P.p01.sections.map((x,i)=>`<div class="grp"><div class="gh"><em>${n2(i)}</em><b>SECTION</b><span class="sp"></span>${del("popups.p01.sections",i)}</div>
       ${tx(`popups.p01.sections.${i}.label`,"작은 제목 (왼쪽 회색 글씨)")}
       ${tx(`popups.p01.sections.${i}.text`,"내용 (줄바꿈 그대로 보여요)",true,110)}</div>`).join("")
