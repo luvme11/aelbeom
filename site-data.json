@@ -114,27 +114,27 @@
     "Test"
   ],
   "front": {
-    "love": "love means",
-    "seeing": "seeing the\nreal",
-    "title1": "Klavier",
-    "title2": "cadenZa."
+    "love": "Test",
+    "seeing": "Test\nTest\nTest",
+    "title1": "Test",
+    "title2": "Test"
   },
   "back": {
-    "k": "K",
-    "rose": "✿",
-    "klav1": "klavier",
-    "klav2": "lavier",
-    "caden": "caden",
-    "z": "Z",
-    "a": "a.",
+    "k": "T",
+    "rose": "♡",
+    "klav1": "Test",
+    "klav2": "Test",
+    "caden": "Test",
+    "z": "S",
+    "a": "T",
     "clef": "𝄢",
-    "trackLabel": "Track List: ",
-    "title": "Klavier Cadenza — Op. 5, No. 12 for solo piano.",
+    "trackLabel": "Test",
+    "title": "Test Test Test Test",
     "tracks": [
-      "Let My Heart Grow",
-      "Kiss Me Right",
-      "Maybe We Could Be a Thing",
-      "Loved Completely"
+      "Test",
+      "Test",
+      "Test",
+      "Test"
     ],
     "copyright": "Copyright 2026 @klavieryeon All Rights Reserved.",
     "number": "08161205",
