@@ -1,16 +1,16 @@
 {
   "labels": {
     "l01": {
-      "name": "Prelude",
-      "sub": "Please Check!"
+      "name": "Test",
+      "sub": "메인"
     },
     "l02": {
-      "name": "Jaeyeon",
-      "sub": "재연"
+      "name": "Test",
+      "sub": "페어 프로필"
     },
     "l03": {
-      "name": "Loved Completely",
-      "sub": "무한을 건너 너에게 갈게"
+      "name": "Test",
+      "sub": "배너"
     }
   },
   "images": {
