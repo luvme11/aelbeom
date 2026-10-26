@@ -1922,14 +1922,16 @@ function updateLines(){
   for(const k of LINKS){
     const pb=k.pin.getBoundingClientRect(), px=pb.left+pb.width/2, py=pb.top+pb.height/2;
     const vis=k.face==="front"?facing:-facing;
-    let op=Math.max(0,Math.min(1,(vis-.05)/.25)), lop=Math.max(op,.45);   // 안 보이는 면의 라벨도 흐리게 남겨 둬요
+    let op=Math.max(0,Math.min(1,(vis-.05)/.25)), lop=1;   // 안 보이는 면의 라벨도 흐리게 남겨 둬요
     // 라벨은 화면 구석이 아니라 앨범 바로 옆(핀 쪽 가장자리)에 붙어 따라다녀요
     const L=k.lab, lw=L.offsetWidth, lh=L.offsetHeight;
     let lx,ly;
     if(activePop===k.pop){const pr=$(k.pop).getBoundingClientRect();lx=pr.left;ly=pr.bottom+12;if(ly+lh>vh-8&&pr.top-lh-12>=8)ly=pr.top-lh-12;lop=1;}
     else{
       const fr=FACEEL[k.face].getBoundingClientRect();
-      ly=py+LABDY[L.id]-lh/2;lx=k.from==="right"?fr.left-46-lw:fr.right+46;
+      let allR=fr.right;   // 03 라벨은 앨범+LP 전체의 오른쪽 끝에서 살짝 떨어져 놓여요
+      if(k.from!=="right")document.querySelectorAll(".face").forEach(f=>{allR=Math.max(allR,f.getBoundingClientRect().right)});
+      ly=py+LABDY[L.id]-lh/2;lx=k.from==="right"?fr.left-46-lw:allR+30;
       if(activePop)lop=0;
     }
     lx=Math.max(8,Math.min(vw-lw-8,lx));ly=Math.max(8,Math.min(vh-lh-8,ly));
